@@ -72,11 +72,11 @@ Serve `site/` locally and check desktop and 375 px mobile layouts. Verify all fi
 - Consumes: `site/` from Task 1 as the deployable static artifact.
 - Produces: automatic GitHub Pages deployments for pushes to `main` and manual `workflow_dispatch` runs.
 
-- [ ] **Step 1: Add the least-privilege Pages workflow**
+- [x] **Step 1: Add the least-privilege Pages workflow**
 
 Use `actions/checkout@v6`, `actions/configure-pages@v5`, `actions/upload-pages-artifact@v4` with `path: site/`, and `actions/deploy-pages@v4`. Grant `contents: read`, `pages: write`, and `id-token: write` only as required; use the `github-pages` deployment environment.
 
-- [ ] **Step 2: Review the workflow for path and permission accuracy**
+- [x] **Step 2: Review the workflow for path and permission accuracy**
 
 Confirm the artifact contains `index.html` plus every file it references and that the Windows application binaries are not embedded in the Pages artifact.
 
