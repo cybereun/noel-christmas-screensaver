@@ -137,6 +137,10 @@ a:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 5px; bo
 .download-inner .eyebrow { justify-content: center; }
 .download-inner h2 { margin: 17px 0 0; font-size: clamp(42px, 6vw, 71px); }
 .download-copy { margin: 13px 0 0; color: var(--muted); font-size: 13px; line-height: 1.9; }
+.release-meta { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 17px 0 0; color: rgba(228, 214, 178, 0.78); font-size: 10px; }
+.version-label { letter-spacing: 0.08em; }
+.release-meta a { color: var(--gold-bright); text-decoration: underline; text-decoration-color: rgba(228, 214, 178, 0.38); text-underline-offset: 4px; }
+.release-meta a:hover { text-decoration-color: var(--gold-bright); }
 .download-actions { justify-content: center; margin-top: 27px; }
 .checksum-link { margin-top: 14px; color: rgba(228, 214, 178, 0.78); font-size: 10px; text-decoration: underline; text-decoration-color: rgba(228, 214, 178, 0.32); text-underline-offset: 4px; }
 .checksum-link:hover { color: var(--gold-bright); text-decoration-color: var(--gold-bright); }
@@ -211,6 +215,7 @@ a:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 5px; bo
   .download-inner { padding-block: 84px 74px; }
   .download-inner .eyebrow { font-size: 8px; letter-spacing: 0.14em; }
   .download-inner h2 { font-size: 43px; }
+  .release-meta { gap: 10px; font-size: 9px; }
   .download-actions { width: 100%; flex-direction: column; }
   .download-actions .button { width: min(100%, 360px); justify-content: space-between; }
   .requirements { max-width: 330px; gap: 6px 0; font-size: 8px; }

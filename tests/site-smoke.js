@@ -10,6 +10,7 @@ const expectedDownloads = [
   'https://github.com/cybereun/noel-christmas-screensaver/releases/latest/download/Noel.scr',
   'https://github.com/cybereun/noel-christmas-screensaver/releases/latest/download/SHA256SUMS.txt',
 ];
+const expectedRelease = 'https://github.com/cybereun/noel-christmas-screensaver/releases/latest';
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
@@ -37,6 +38,9 @@ async function main() {
   for (const url of expectedDownloads) {
     assert(html.includes(url), `The page must expose the latest release asset: ${url}`);
   }
+  assert(html.includes(expectedRelease), 'The page must link to release notes and the complete release file list.');
+  assert(html.includes('버전 v1.0.0'), 'The download section must identify the shipped version.');
+  assert(html.includes('다시 시작할 때 잠금'), 'The Windows guide must explain where to configure lock preferences.');
 
   const imageTags = Array.from(html.matchAll(/<img\b[^>]*>/gi), (match) => match[0]);
   for (let scene = 1; scene <= 5; scene += 1) {
@@ -82,7 +86,7 @@ async function main() {
     }
     const favicon = await request(port, `${prefix}assets/favicon.ico`);
     assert(favicon.status === 200 && favicon.body.length > 100, 'The favicon must load below the repository path.');
-    console.log('PASS: Korean page, three latest-release links, five accessible scene images, favicon, keyboard focus, reduced motion, and project-path asset serving.');
+    console.log('PASS: Korean page, v1.0.0/release overview, three latest-release downloads, Windows lock guidance, five accessible scenes, favicon, keyboard focus, reduced motion, and project-path asset serving.');
   } finally {
     await new Promise((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
   }
