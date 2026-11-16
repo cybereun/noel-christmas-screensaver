@@ -1,0 +1,5 @@
+dist/
+tests/bin/
+tests/*.exe
+tests/renders/
+*.tmp
