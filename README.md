@@ -2,6 +2,8 @@
 
 깊은 겨울밤, 샴페인 골드 트리와 천천히 내리는 눈을 담은 Windows 화면 보호기입니다.
 
+**다섯 가지 겨울 장면:** [홍보 사이트](https://cybereun.github.io/noel-christmas-screensaver/) · [최신 Windows용 Noel.exe 다운로드](https://github.com/cybereun/noel-christmas-screensaver/releases/latest/download/Noel.exe) · [릴리스](https://github.com/cybereun/noel-christmas-screensaver/releases/latest)
+
 ## 크리스마스 장면 5가지
 
 1. **샴페인 골드 트리** — 깊은 밤빛과 금색 전구, 선물 상자

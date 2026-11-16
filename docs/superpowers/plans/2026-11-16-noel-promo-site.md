@@ -34,6 +34,7 @@
 **Files:**
 - Create: `site/index.html`
 - Create: `site/styles.css`
+- Create: `tests/site-smoke.js` (dependency-free static-site regression check)
 - Create: `site/assets/theme-1.png` through `site/assets/theme-5.png` by copying `docs/themes/theme-1.png` through `docs/themes/theme-5.png`
 - Create: `site/assets/favicon.ico` by copying `assets/noel.ico`
 - Modify: `README.md` to link to the promotional page and explain the public downloads
@@ -42,23 +43,23 @@
 - Consumes: the five approved PNG scene renders, `assets/noel.ico`, and verified saver features in `README.md` / `src/SettingsWindow.cs`.
 - Produces: a static site rooted at `site/index.html`; CSS-local assets resolve from `site/assets/` and release links point at the latest GitHub Release assets.
 
-- [ ] **Step 1: Copy the original artwork into the static-site asset folder**
+- [x] **Step 1: Copy the original artwork into the static-site asset folder**
 
 Create the exact five `site/assets/theme-N.png` files and `site/assets/favicon.ico`; compare copied bytes to their source files.
 
-- [ ] **Step 2: Write the semantic landing page in `site/index.html`**
+- [x] **Step 2: Write the semantic landing page in `site/index.html`**
 
 Use sections for hero/download, five-scene gallery, verified feature summary, Windows apply steps, version/system requirements, and checksum. The primary button links to `https://github.com/cybereun/noel-christmas-screensaver/releases/latest/download/Noel.exe`; a second link targets `Noel.scr`. Use Korean alt text for the scene imagery, Korean document language, page metadata, and no repository-source promo link.
 
-- [ ] **Step 3: Implement the responsive visual system in `site/styles.css`**
+- [x] **Step 3: Implement the responsive visual system in `site/styles.css`**
 
 Use midnight teal, champagne gold, warm ivory type, restrained snowfall/star motifs, clear focus rings, responsive image-led composition, and a `prefers-reduced-motion: reduce` media query. Avoid external fonts, libraries, or remote assets.
 
-- [ ] **Step 4: Add concise site/download guidance to the root `README.md`**
+- [x] **Step 4: Add concise site/download guidance to the root `README.md`**
 
 Link to the Pages URL and public release downloads; preserve build/run documentation and keep the unrelated enclosing README untouched.
 
-- [ ] **Step 5: Inspect the local static site**
+- [x] **Step 5: Inspect the local static site**
 
 Serve `site/` locally and check desktop and 375 px mobile layouts. Verify all five images (including when deployed under the repository subpath), favicon, anchors, keyboard focus, release-link targets, and reduced-motion styling in the page.
 
