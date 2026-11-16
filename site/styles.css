@@ -62,7 +62,8 @@ a:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 5px; bo
   position: relative;
   display: grid;
   align-items: end;
-  min-height: min(940px, 100svh);
+  min-height: 100vh;
+  min-height: 100svh;
   overflow: hidden;
   isolation: isolate;
   background: #102225;
@@ -161,7 +162,7 @@ a:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 5px; bo
   .brand-type, .brand-divider { display: none; }
   .main-nav { gap: 18px; font-size: 11px; }
   .nav-download { padding: 9px 12px; }
-  .hero { min-height: min(820px, 96svh); }
+  .hero { min-height: 100vh; min-height: 100svh; }
   .hero-art { object-position: 56% center; }
   .hero-content { width: min(700px, calc(100% - 56px)); margin: 0 auto 104px; }
   .hero-scroll { right: 28px; bottom: 42px; }
@@ -183,7 +184,7 @@ a:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 5px; bo
   .main-nav { gap: 10px; }
   .main-nav > a:not(.nav-download) { display: none; }
   .nav-download { padding: 8px 10px; font-size: 10px; }
-  .hero { min-height: max(730px, 94svh); }
+  .hero { min-height: max(730px, 100svh); }
   .hero-art { object-position: 62% 48%; }
   .hero-shade { background: linear-gradient(180deg, rgba(4, 14, 16, 0.19) 0%, rgba(5, 16, 18, 0.03) 27%, rgba(5, 16, 18, 0.2) 53%, rgba(6, 18, 20, 0.88) 100%), linear-gradient(90deg, rgba(7, 20, 22, 1) 0%, rgba(7, 20, 22, 1) 12%, rgba(7, 20, 22, 0.55) 24%, transparent 42%); }
   .hero-content { width: calc(100% - 40px); margin-bottom: 112px; }
