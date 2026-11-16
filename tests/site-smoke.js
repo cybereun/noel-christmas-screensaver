@@ -57,8 +57,9 @@ async function main() {
   const css = fs.readFileSync(path.join(siteRoot, stylesheetMatch[1]), 'utf8');
   assert(/:focus-visible\b/.test(css), 'Keyboard focus must be visible.');
   assert(/prefers-reduced-motion:\s*reduce/i.test(css), 'The page must respect reduced-motion preferences.');
-  const heroShade = css.match(/\.hero-shade\s*\{[^}]*\}/i);
-  assert(heroShade && /rgba\(7,\s*20,\s*22,\s*1\) 0%, rgba\(7,\s*20,\s*22,\s*1\) 42%/i.test(heroShade[0]), 'The desktop hero must mask the artwork lettering beneath the Korean headline.');
+  const heroShades = Array.from(css.matchAll(/\.hero-shade\s*\{[^}]*\}/gi), (match) => match[0]);
+  assert(heroShades.length >= 2 && /rgba\(7,\s*20,\s*22,\s*1\) 0%, rgba\(7,\s*20,\s*22,\s*1\) 42%/i.test(heroShades[0]), 'The desktop hero must mask the artwork lettering beneath the Korean headline.');
+  assert(/linear-gradient\(90deg,\s*rgba\(7,\s*20,\s*22,\s*1\) 0%,\s*rgba\(7,\s*20,\s*22,\s*1\) 12%/i.test(heroShades[1]), 'The mobile hero must mask poster lettering near the narrow viewport edge.');
 
   const server = http.createServer((req, res) => {
     let requestPath;
@@ -88,7 +89,7 @@ async function main() {
     }
     const favicon = await request(port, `${prefix}assets/favicon.ico`);
     assert(favicon.status === 200 && favicon.body.length > 100, 'The favicon must load below the repository path.');
-    console.log('PASS: Korean page, legible hero, v1.0.0/release overview, three latest-release downloads, Windows lock guidance, five accessible scenes, favicon, keyboard focus, reduced motion, and project-path asset serving.');
+    console.log('PASS: Korean page, legible responsive hero, v1.0.0/release overview, three latest-release downloads, Windows lock guidance, five accessible scenes, favicon, keyboard focus, reduced motion, and project-path asset serving.');
   } finally {
     await new Promise((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
   }
