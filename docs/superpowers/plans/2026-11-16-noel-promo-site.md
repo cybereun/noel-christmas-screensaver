@@ -74,7 +74,7 @@ Serve `site/` locally and check desktop and 375 px mobile layouts. Verify all fi
 
 - [x] **Step 1: Add the least-privilege Pages workflow**
 
-Use `actions/checkout@v6`, `actions/configure-pages@v5`, `actions/upload-pages-artifact@v4` with `path: site/`, and `actions/deploy-pages@v4`. Grant `contents: read`, `pages: write`, and `id-token: write` only as required; use the `github-pages` deployment environment.
+Use `actions/checkout@v6`, `actions/configure-pages@v6`, `actions/upload-pages-artifact@v5` with `path: site/`, and `actions/deploy-pages@v5`. Grant `contents: read`, `pages: write`, and `id-token: write` only as required; use the `github-pages` deployment environment.
 
 - [x] **Step 2: Review the workflow for path and permission accuracy**
 
